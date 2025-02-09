@@ -1,4 +1,4 @@
-<Project>
+﻿<Project>
   <ItemGroup>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))">
       <SourceType>Package</SourceType>
@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>oj8f315t0f</Fingerprint>
-      <Integrity>BPAWGM07PPM6vgeeRnlEqBhyEjHYb30WUsfeJUN0TWE=</Integrity>
+      <Fingerprint>kgi8dd7kde</Fingerprint>
+      <Integrity>dAAJkXSzGR8OnGOReoXstEo7HEpr2HPwvsxWcS6xlNY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</OriginalItemSpec>
