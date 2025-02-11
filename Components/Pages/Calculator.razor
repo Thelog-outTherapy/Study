@@ -1,0 +1,128 @@
+@page "/Calculator"
+@using System.Net.Mime
+@rendermode InteractiveServer
+<h3>Calculator</h3>
+
+<div style="padding-bottom: 5px">
+    <input @bind="MathExpression">
+</div>
+
+<div class="MyContainerCalc">
+    <div class="CalculatorInterface">
+        <button type="button" class="CalculatorInterface" @onclick="() => Input(1)">1</button>
+        <button type="button" class="CalculatorInterface" @onclick="() => Input(2)">2</button>
+        <button type="button" class="CalculatorInterface" @onclick="() => Input(3)">3</button>
+        <button type="button" class="CalculatorInterface" @onclick="() => SignDetermination('+')">+</button>
+    </div>
+
+    <div class="CalculatorInterface">
+        <button type="button" class="CalculatorInterface" @onclick="() => Input(4)">4</button>
+        <button type="button" class="CalculatorInterface" @onclick="() => Input(5)">5</button>
+        <button type="button" class="CalculatorInterface" @onclick="() => Input(6)">6</button>
+        <button type="button" class="CalculatorInterface" @onclick="() => SignDetermination('-')">-</button>
+    </div>
+
+    <div class="CalculatorInterface">
+        <button type="button" class="CalculatorInterface" @onclick="() => Input(7)">7</button>
+        <button type="button" class="CalculatorInterface" @onclick="() => Input(8)">8</button>
+        <button type="button" class="CalculatorInterface" @onclick="() => Input(9)">9</button>
+        <button type="button" class="CalculatorInterface" @onclick="() => SignDetermination('*')">*</button>
+    </div>
+
+    <div class="CalculatorInterface">
+        <button type="button" class="CalculatorInterface" @onclick="() => SignDetermination('^')">^</button>
+        <button type="button" class="CalculatorInterface" @onclick="() => Input(0)">0</button>
+        <button type="button" class="CalculatorInterface" @onclick="() => SignDetermination('!')">!</button>
+        <button type="button" class="CalculatorInterface" @onclick="() => SignDetermination('/')">/</button>
+    </div>
+    
+    <div>
+        <button type="button" class="deleteButton" @onclick="() => Clear()">Delete</button>
+        <button type="button" class="equalsButton" @onclick="Calculation">=</button>
+    </div>
+    
+</div>
+
+
+@code {
+    private string MathExpression { get; set; } = "";
+    private char OperationSign { get; set; }
+    private double Operand1 { get; set; }
+    private double Operand2 { get; set; }
+    
+    
+
+    private void Input(double value)
+    {
+        MathExpression += value.ToString(); 
+        StateHasChanged();
+    }
+
+    private void SignDetermination(char operationSign)
+    {
+        MathExpression += operationSign;
+        OperationSign = operationSign;
+
+    }
+
+    private void Calculation()
+    {
+        double result = 0;
+        string[] operandsString = MathExpression.Split('+', '-', '*', '/', '!', '^');
+        Operand1 = Convert.ToDouble(operandsString[0]);
+        if(operandsString[1] != "")
+            Operand2 = Convert.ToDouble(operandsString[1]);
+
+        switch (OperationSign)
+        {
+            case '+':
+                result = Operand1 + Operand2;
+                break;
+            case '-':
+                result = Operand1 - Operand2;
+                break;
+            case '*':
+                result = Operand1 * Operand2;
+                break;
+            case '/':
+                result = Operand1 / Operand2;
+                break;
+            case '!':
+                result = Factorial(Operand1);
+                break;
+            case '^':
+                result = Degree(MathExpression);
+                break;
+        }
+
+        MathExpression = result.ToString();
+    }
+
+
+    double Factorial(double number)
+        {
+            double multiplication = 1;
+            for (int i = 1; i <= number; ++i)
+            {
+                multiplication = multiplication * i;
+            }
+
+            return multiplication;
+        }
+
+    double Degree(string ex)
+        {
+            string[] array = ex.Split('^');
+            double num1 = Convert.ToDouble(array[0]);
+            double num2 = Convert.ToDouble(array[1]);
+            return Math.Pow(num1, num2);
+        }
+
+    void Clear()
+        {
+            MathExpression = "";
+        }
+        
+    
+
+}

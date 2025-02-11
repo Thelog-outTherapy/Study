@@ -77,4 +77,4 @@ C:\Users\serge\RiderProjects\BlazorApp1\BlazorApp1\obj\Debug\net9.0\BlazorApp1.p
 C:\Users\serge\RiderProjects\BlazorApp1\BlazorApp1\obj\Debug\net9.0\BlazorApp1.genruntimeconfig.cache
 C:\Users\serge\RiderProjects\BlazorApp1\BlazorApp1\obj\Debug\net9.0\ref\BlazorApp1.dll
 C:\Users\serge\RiderProjects\BlazorApp1\BlazorApp1\obj\Debug\net9.0\BlazorApp1.sourcelink.json
-C:\Users\serge\RiderProjects\BlazorApp1\BlazorApp1\obj\Debug\net9.0\compressed\psnyflj9j1-kgi8dd7kde.gz
+C:\Users\serge\RiderProjects\BlazorApp1\BlazorApp1\obj\Debug\net9.0\compressed\psnyflj9j1-e3vxmvdm8s.gz

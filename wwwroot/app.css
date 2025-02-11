@@ -70,4 +70,26 @@ h1:focus {
     align-self: flex-start;
     flex-direction: column;
 }
-
+.MyContainerCalc{
+    display: flex;
+    flex-direction: column;
+}
+.CalculatorInterface {
+    display: flex;
+    align-self: flex-start;
+    background-color: #0d6efd;
+    border-radius: 5px;
+    color: white;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.deleteButton {
+    background-color: #bb2d3b;
+    border-radius: 5px;
+    color: white;
+}
+.equalsButton {
+    background-color: #20c997;
+    border-radius: 5px;
+    color: white;
+}
